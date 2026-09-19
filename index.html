@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Happy Birthday, My Love</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Petit+Formal+Script&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- progress bar -->
+<div class="progress-track" aria-hidden="true">
+  <div class="progress-fill" id="progressFill"></div>
+</div>
+
+<!-- floating hearts / sparkles layer (populated by script.js) -->
+<div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+
+<!-- music control -->
+<div class="music-widget" id="musicWidget">
+  <button class="music-toggle" id="musicToggle" aria-label="Play our song">
+    <span class="music-icon">&#9835;</span>
+    <span class="music-label">Play our song</span>
+  </button>
+  <div class="volume-row" id="volumeRow">
+    <button class="mute-btn" id="muteBtn" aria-label="Mute">&#128266;</button>
+    <input type="range" id="volumeSlider" min="0" max="100" value="55" aria-label="Volume" />
+  </div>
+  <!-- Replace src below with your song. Keep controls off; playback is user-initiated only. -->
+  <audio id="bgMusic" loop preload="none">
+    <source src="assets/our-song.mp3" type="audio/mpeg" />
+  </audio>
+</div>
+
+<main id="main">
+
+  <!-- ============ SECTION 0 — OPENING GATE ============ -->
+  <section class="screen gate" id="gate">
+    <div class="gate-inner">
+      <p class="gate-eyebrow">for sana</p>
+      <h1 class="gate-line">I made something<br>for you&hellip;</h1>
+      <button class="open-btn" id="openBtn">
+        <span>Opennnnn</span> <span class="heart-emoji">&#10084;&#65039;</span>
+      </button>
+    </div>
+    <div class="gate-sparkles" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ SECTION 0.5 — TRANSITION GREETING ============ -->
+  <section class="screen greet" id="greet">
+    <h1 class="greet-line">Happy Birthday,<br>My Loveee <span class="heart-emoji">&#10084;&#65039;</span></h1>
+  </section>
+
+  <!-- ============ SECTION 1 — THE LETTER ============ -->
+  <section class="section letter-section" id="letter-section">
+    <p class="section-kicker">a little something i wanted you to read today &#128140;</p>
+
+    <div class="letter-paper">
+      <div class="letter-body" id="letterBody">
+<p data-p>Idk whatt to sayyy</p>
+
+<p data-p>First of all HAPPY BIRTHDAY TO MY LOML &#10084;&#65039;, ur the best thing tht has happened to me. I think I mentioned this more than twice in most of the letters shye &#128557;, u stayed when u had all the reason to leave. U were with me when I was having a hard time when my grandpa died, u were there for me and the only relief was texting you. I would js sit and think soo much, but when I text you, everything vanishes. I gave u a lot of reasons to leave, but u stayed.</p>
+
+<p data-p>U mean soo much to me, idk how to express my feelings here, but u m8 not have an idea how much depth I'm in love with you. Sometimes I js look at our chats and think about how lucky I am to have someone like u in my life. I don't think u realise how much of a place u have in my heart. Ur not js someone I love, ur someone I genuinely can't imagine my life without.</p>
+
+<p data-p>When there is a slight change in the way ur texting, I would ask myself if I did something wrong. And don't think I don't understand u, I'm always trying to understand u. I wanna know what goes on in ur head, what makes u happy, what hurts u, everything. Even when things aren't perfect between us, my feelings for u don't suddenly disappear. If anything, they make me wanna understand u more and hold onto us harder.</p>
+
+<p data-p>And ur no option for me, ur the only one I love and I want to be with. I don't want just the good days with u, I want the annoying days, the silly arguments, the random conversations, the quiet days, everything. I want all the little things that come with loving u. I wanna be there for u through every chapter of ur life, and I hope u let me stay for all of them.</p>
+
+<p data-p>Don't push me away when things get little grumpy between us... promise me, we will always talk and fix things, okay? &#10084;&#65039; I don't expect us to be perfect, I js want us to never give up on each other.</p>
+
+<p data-p>And if someday u forget how much u mean to me, come back and read this. Because no matter how badly I explain it, I'll always be loving u deeper than I know how to put into words.</p>
+
+<p class="letter-aside" data-p>Omg I'm diverting the topic &#128557;</p>
+
+<p data-p>Happy birthday againnn, my loveee &#10084;&#65039; I pray ur year to be filled with lots of joy and happiness. I hope u get everything ur heart wishes for and more. I hope I get to see u achieve everything u dream about, and I hope I get to be beside u through all of it.</p>
+
+<p class="letter-standalone" data-p>I love you.</p>
+
+<p class="letter-signoff" data-p>Ilym &#10084;&#65039;<br>Your aadhi,</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2 — THINGS I LOVE ABOUT U ============ -->
+  <section class="section love-section" id="love-section">
+    <p class="section-kicker">things i love about u &#10084;&#65039;</p>
+    <p class="section-hint">tap a card</p>
+
+    <div class="love-grid" id="loveGrid">
+      <button class="love-card" data-msg="i could get lost in them all day, not even exaggerating">
+        <span class="love-front">your eyes &#128557;</span>
+      </button>
+      <button class="love-card" data-msg="ofccc the cutest thing i have ever seen in my life, no debate">
+        <span class="love-front">your cheeekssss ofcccc</span>
+      </button>
+      <button class="love-card" data-msg="the way ur face does tht thing before u even say anything, i already know exactly what ur thinking">
+        <span class="love-front">your little reactionssss</span>
+      </button>
+      <button class="love-card" data-msg="ok this one is a lil chaotic ngl but i wouldn't trade it for anything, it's just so u">
+        <span class="love-front">your attitudeeee but sometimes it's kinda annoying&#128578;</span>
+      </button>
+      <button class="love-card" data-msg="the way u show up for people u love, it's actually one of my favorite things about u">
+        <span class="love-front">the way u care</span>
+      </button>
+      <button class="love-card" data-msg="idk when it happened exactly but u became like, the main character of my whole life">
+        <span class="love-front">the way u became such a huge part of my life</span>
+      </button>
+      <button class="love-card" data-msg="one text from u and every bad thing in my head just goes quiet">
+        <span class="love-front">the way talking to u can make everything else disappear</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3 — OUR MEMORIES ============ -->
+  <section class="section memories-section" id="memories-section">
+    <p class="section-kicker">our memories</p>
+
+    <!--
+      PHOTO SETUP:
+      Drop your photos into the /assets folder using these exact filenames,
+      or edit the src="" paths below to match your own filenames:
+      assets/memory1.jpg ... assets/memory6.jpg
+    -->
+    <div class="scrapbook" id="scrapbook">
+      <button class="polaroid" style="--r:-4deg" data-full="assets/memory1.jpg">
+        <img src="assets/memory1.jpg" alt="Memory 1" loading="lazy" onerror="this.parentElement.classList.add('img-missing')">
+        <span class="polaroid-caption">one of my favourite memories of us &#10084;&#65039;</span>
+      </button>
+      <button class="polaroid" style="--r:3deg" data-full="assets/memory2.jpg">
+        <img src="assets/memory2.jpg" alt="Memory 2" loading="lazy" onerror="this.parentElement.classList.add('img-missing')">
+        <span class="polaroid-caption">i could look at this forever.</span>
+      </button>
+      <button class="polaroid" style="--r:-2deg" data-full="assets/memory3.jpg">
+        <img src="assets/memory3.jpg" alt="Memory 3" loading="lazy" onerror="this.parentElement.classList.add('img-missing')">
+        <span class="polaroid-caption">a moment i never wanna forget</span>
+      </button>
+      <button class="polaroid" style="--r:5deg" data-full="assets/memory4.jpg">
+        <img src="assets/memory4.jpg" alt="Memory 4" loading="lazy" onerror="this.parentElement.classList.add('img-missing')">
+        <span class="polaroid-caption">still smiling looking at this one</span>
+      </button>
+      <button class="polaroid" style="--r:-3deg" data-full="assets/memory5.jpg">
+        <img src="assets/memory5.jpg" alt="Memory 5" loading="lazy" onerror="this.parentElement.classList.add('img-missing')">
+        <span class="polaroid-caption">us, being us</span>
+      </button>
+      <button class="polaroid" style="--r:2deg" data-full="assets/memory6.jpg">
+        <img src="assets/memory6.jpg" alt="Memory 6" loading="lazy" onerror="this.parentElement.classList.add('img-missing')">
+        <span class="polaroid-caption">my favorite person, every time</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img src="" alt="" id="lightboxImg" />
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <!-- ============ SECTION 4 — IF I COULD GIVE U ANYTHING ============ -->
+  <section class="section gift-section" id="gift-section">
+    <p class="gift-line" data-p>If I could give u anything for ur birthday&hellip;</p>
+    <p class="gift-line gift-line-main" data-p>I'd give u the ability to see yourself through my eyes for a moment.</p>
+    <p class="gift-line gift-line-final" data-p>Maybe then you'd finally understand how beautiful, special and loved u really are. <span class="heart-emoji">&#10084;&#65039;</span></p>
+  </section>
+
+  <!-- ============ SECTION 5 — FINALE ============ -->
+  <section class="screen finale" id="finale-section">
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <div class="finale-content">
+      <p class="finale-line" data-p>Before u go&hellip;</p>
+      <p class="finale-line" data-p>I just want u to know&hellip;</p>
+      <p class="finale-line" data-p>I'm really grateful that ur in my life.</p>
+      <p class="finale-line finale-big" data-p>Happy Birthday, My Loveee <span class="heart-emoji">&#10084;&#65039;</span></p>
+      <p class="finale-line" data-p>I hope this year gives u everything ur heart wishes for.</p>
+      <p class="finale-line" data-p>And I hope I get to be beside u through all of it.</p>
+      <p class="finale-line finale-signoff" data-p>Ilym &#10084;&#65039;<br>Fi dunya wa fil akhira, inshaAllah.</p>
+      <p class="finale-line finale-last" data-p>Forever sounds pretty good if it's with u. <span class="heart-emoji">&#10084;&#65039;</span></p>
+
+      <div class="finale-heart" id="finaleHeart" aria-hidden="true">
+        <svg viewBox="0 0 100 90" width="90" height="80">
+          <path id="heartPath" d="M50 85 C 10 55, -5 25, 20 10 C 35 0, 48 8, 50 22 C 52 8, 65 0, 80 10 C 105 25, 90 55, 50 85 Z"/>
+        </svg>
+      </div>
+
+      <button class="replay-btn" id="replayBtn">replay &#8635;</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
